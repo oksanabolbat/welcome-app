@@ -13,7 +13,7 @@ export default component$(() => {
                     fontSize: 30,
                 })}
             >
-                This box is styled with PandaCSS.
+                This box is styled with PandaCSS. lala
             </div>
         </>
     );

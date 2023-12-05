@@ -19,7 +19,7 @@ export default component$(() => {
         <>
             <Header />
             <Slot />
-            <footer>footer-diffetenr layout</footer>
+            <footer>footer with different layout</footer>
             <script
                 type="text/javascript"
                 src="add_to_homescreen/src/addtohomescreen.js"

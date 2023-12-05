@@ -20,11 +20,6 @@ export default component$(() => {
             <Header />
             <Slot />
             <footer>footer</footer>
-            <script
-                type="text/javascript"
-                src="add_to_homescreen/src/addtohomescreen.js"
-            ></script>
-            <script dangerouslySetInnerHTML={"() => addToHomescreen()"} />
         </>
     );
 });
