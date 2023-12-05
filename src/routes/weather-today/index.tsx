@@ -10,7 +10,7 @@ import WeatherInfo, {
 } from "~/components/weather-info/weather-info";
 
 const API_KEY = "fed44a46a5434d76a6b214001230212";
-const url = "http://api.weatherapi.com/v1/current.json?";
+const url = "https://api.weatherapi.com/v1/current.json?";
 // const api_params = {
 //     key: API_KEY,
 //     q: "London",
