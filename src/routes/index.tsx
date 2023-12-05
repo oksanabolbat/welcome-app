@@ -1,8 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
-import { buttonStyle } from "~/styled-system/recipes/button";
-
+import { buttonStyle } from "~/recipes/button";
 export default component$(() => {
     return (
         <>
