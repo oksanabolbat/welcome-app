@@ -3,8 +3,8 @@ import { css } from "~/styled-system/css";
 
 import { container } from "~/styled-system/patterns";
 //import { Button, Input } from "~/styled-system/recipes";
-import { Button } from "~/styled-system/recipes/button";
-import { Input } from "~/styled-system/recipes/input";
+//import { Button } from "~/styled-system/recipes!/button";
+//import { Input } from "~/styled-system/recipes!/input";
 
 import WeatherInfo, {
     type WeatherInfoProps,
@@ -83,7 +83,7 @@ export default component$(() => {
             })}
         >
             <form preventdefault:submit onSubmit$={submitHandler}>
-                <Input
+                <input
                     type="text"
                     onChange$={(e) => {
                         placeNameSignal.value = (
@@ -91,9 +91,9 @@ export default component$(() => {
                         ).value;
                     }}
                 />{" "}
-                <Button type="submit" class={css({ margin: "10px" })} size="lg">
+                <button type="submit" class={css({ margin: "10px" })}>
                     show
-                </Button>
+                </button>
             </form>
             {showPlaceWarningSignal.value && (
                 <p class={css({ color: "brown" })}>
