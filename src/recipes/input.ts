@@ -1,7 +1,7 @@
 import { styled } from "../styled-system/jsx";
 import { cva, type RecipeVariantProps } from "../styled-system/css";
 
-const inputStyle = cva({
+export const inputStyle = cva({
     base: {
         minWidth: "200px",
         fontFamily: "monospace",

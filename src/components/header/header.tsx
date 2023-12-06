@@ -9,14 +9,14 @@ export const Header = component$(() => {
             <nav class={vstack()}>
                 <ul>
                     <li>
+                        <Link href="/">home</Link>
+                    </li>
+                    <li>
                         <Link href="/weather-today">check weather</Link>
                     </li>
                     <li>
-                        <Link href="/">home</Link>
+                        <Link href="/to-do">todo list</Link>
                     </li>
-                    <div class={"p-4 bg-primary text-white"}>
-                        This is a Panda CSS component!
-                    </div>
                 </ul>
             </nav>
         </header>
