@@ -15,7 +15,7 @@ export const Header = component$(() => {
                         <Link href="/weather-today">check weather</Link>
                     </li>
                     <li>
-                        <Link href="/to-do">todo list</Link>
+                        <Link href="/todo">todo list</Link>
                     </li>
                 </ul>
             </nav>

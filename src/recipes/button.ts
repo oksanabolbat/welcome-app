@@ -18,6 +18,7 @@ export const buttonStyle = cva({
         size: {
             sm: {
                 fontSize: "13px",
+                minWidth: "100px",
             },
             lg: {
                 fontSize: "18px",
