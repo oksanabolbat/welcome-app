@@ -4,6 +4,7 @@ import { Button } from "~/recipes/button";
 import { inputStyle } from "~/recipes/input";
 import { TodoList } from "./todo-list";
 import { todoCtxId } from "../todo-context";
+import { AddItem } from "./add-item";
 
 export interface ItemProps {
     id: number;
@@ -43,6 +44,7 @@ export default component$(() => {
                     add
                 </Button>
             </form>
+            <AddItem />
             <TodoList />
         </>
     );
