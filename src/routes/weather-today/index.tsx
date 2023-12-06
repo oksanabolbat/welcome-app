@@ -18,48 +18,59 @@ const url = "https://api.weatherapi.com/v1/current.json?";
 
 export const getCurrentWeather = async (
     place: string
-): Promise<WeatherInfoProps> => {
-    console.log("fetching data");
-
+): Promise<WeatherInfoProps | null> => {
     const res = await fetch(
         url + new URLSearchParams({ key: API_KEY, q: place })
     );
-    const data = await res.json();
-
-    return {
-        placeName: data.location.name,
-        lastUpdated: data.current.last_updated,
-        localTime: data.location.localtime,
-        tempC: data.current.temp_c,
-        tempF: data.current.temp_f,
-        feelsLikeC: data.current.fellslike_c,
-        feelsLikeF: data.current.fellslike_f,
-        conditionText: data.current.condition.text,
-        windMph: data.current.wind_mph,
-        windKph: data.current.wind_kph,
-        humidity: data.current.humidity,
-        cloud: data.current.cloud,
-        uv: data.current.uv,
-    };
+    try {
+        const data = await res.json();
+        if (data) {
+            return {
+                placeName: data.location.name,
+                lastUpdated: data.current.last_updated,
+                localTime: data.location.localtime,
+                tempC: data.current.temp_c,
+                tempF: data.current.temp_f,
+                feelsLikeC: data.current.feelslike_c,
+                feelsLikeF: data.current.feelslike_f,
+                conditionText: data.current.condition.text,
+                windMph: data.current.wind_mph,
+                windKph: data.current.wind_kph,
+                humidity: data.current.humidity,
+                cloud: data.current.cloud,
+                uv: data.current.uv,
+                icon: data.current.condition.icon,
+            };
+        } else {
+            return null;
+        }
+    } catch (e) {
+        console.log(e);
+        return null;
+    }
 };
 
 export default component$(() => {
     const placeNameSignal = useSignal("");
-    const enteredPlaceSignal = useSignal("");
+    const isPlaceEntered = useSignal("");
     const showPlaceWarningSignal = useSignal(false);
+    const showWeather = useSignal(false);
 
     const currWeatherInfoSignal = useSignal<WeatherInfoProps>({
         placeName: "",
     });
 
     useTask$(({ track }) => {
-        track(() => enteredPlaceSignal.value);
-        if (enteredPlaceSignal.value.length > 1) {
-            getCurrentWeather(enteredPlaceSignal.value);
-            getCurrentWeather(enteredPlaceSignal.value).then((data) => {
-                const weatherInfo: WeatherInfoProps = data;
-
-                currWeatherInfoSignal.value = weatherInfo;
+        track(() => isPlaceEntered.value);
+        if (isPlaceEntered.value.length > 1) {
+            getCurrentWeather(isPlaceEntered.value).then((data) => {
+                if (data) {
+                    currWeatherInfoSignal.value = data;
+                    showWeather.value = true;
+                    console.log(currWeatherInfoSignal.value);
+                } else {
+                    showWeather.value = false;
+                }
             });
         }
     });
@@ -67,7 +78,7 @@ export default component$(() => {
     const submitHandler = $(() => {
         if (placeNameSignal.value.trim().length > 0) {
             showPlaceWarningSignal.value = false;
-            enteredPlaceSignal.value = placeNameSignal.value.trim();
+            isPlaceEntered.value = placeNameSignal.value.trim();
         } else {
             showPlaceWarningSignal.value = true;
         }
@@ -76,7 +87,7 @@ export default component$(() => {
     return (
         <div
             class={container({
-                maxWidth: "800px",
+                maxWidth: "550px",
                 margin: "20px auto",
                 textAlign: "center",
             })}
@@ -100,9 +111,12 @@ export default component$(() => {
                 </p>
             )}
 
-            {currWeatherInfoSignal.value.placeName && (
-                <WeatherInfo data={currWeatherInfoSignal.value} />
-            )}
+            {currWeatherInfoSignal.value.placeName &&
+                (showWeather.value ? (
+                    <WeatherInfo data={currWeatherInfoSignal.value} />
+                ) : (
+                    <p>Sorry, something went wrong. Please enter other place</p>
+                ))}
         </div>
     );
 });
