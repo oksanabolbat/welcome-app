@@ -8,51 +8,49 @@ import { Input } from "~/recipes/input";
 import WeatherInfo, {
     type WeatherInfoProps,
 } from "~/components/weather-info/weather-info";
+import { server$ } from "@builder.io/qwik-city";
 
 const API_KEY = "fed44a46a5434d76a6b214001230212";
 const url = "https://api.weatherapi.com/v1/current.json?";
-// const api_params = {
-//     key: API_KEY,
-//     q: "London",
-// };
 
-export const getCurrentWeather = async (
-    place: string
-): Promise<WeatherInfoProps | null> => {
-    const res = await fetch(
-        url + new URLSearchParams({ key: API_KEY, q: place })
-    );
-    try {
-        const data = await res.json();
-        if (data) {
-            return {
-                placeName: data.location.name,
-                lastUpdated: data.current.last_updated,
-                localTime: data.location.localtime,
-                tempC: data.current.temp_c,
-                tempF: data.current.temp_f,
-                feelsLikeC: data.current.feelslike_c,
-                feelsLikeF: data.current.feelslike_f,
-                conditionText: data.current.condition.text,
-                windMph: data.current.wind_mph,
-                windKph: data.current.wind_kph,
-                humidity: data.current.humidity,
-                cloud: data.current.cloud,
-                uv: data.current.uv,
-                icon: data.current.condition.icon,
-            };
-        } else {
+export const getCurrentWeather = server$(
+    async (place: string): Promise<WeatherInfoProps | null> => {
+        const res = await fetch(
+            url + new URLSearchParams({ key: API_KEY, q: place })
+        );
+        try {
+            const data = await res.json();
+            if (data) {
+                return {
+                    placeName: data.location.name,
+                    lastUpdated: data.current.last_updated,
+                    localTime: data.location.localtime,
+                    tempC: data.current.temp_c,
+                    tempF: data.current.temp_f,
+                    feelsLikeC: data.current.feelslike_c,
+                    feelsLikeF: data.current.feelslike_f,
+                    conditionText: data.current.condition.text,
+                    windMph: data.current.wind_mph,
+                    windKph: data.current.wind_kph,
+                    humidity: data.current.humidity,
+                    cloud: data.current.cloud,
+                    uv: data.current.uv,
+                    icon: data.current.condition.icon,
+                };
+            } else {
+                return null;
+            }
+        } catch (e) {
+            console.log(e);
             return null;
         }
-    } catch (e) {
-        console.log(e);
-        return null;
     }
-};
+);
 
 export default component$(() => {
     const placeNameSignal = useSignal("");
     const isPlaceEntered = useSignal("");
+    const isWrongPlace = useSignal(false);
     const showPlaceWarningSignal = useSignal(false);
     const showWeather = useSignal(false);
 
@@ -67,20 +65,26 @@ export default component$(() => {
                 if (data) {
                     currWeatherInfoSignal.value = data;
                     showWeather.value = true;
-                    console.log(currWeatherInfoSignal.value);
+                    // console.log(currWeatherInfoSignal.value);
                 } else {
                     showWeather.value = false;
+                    isWrongPlace.value = true;
                 }
             });
+        } else {
+            showWeather.value = false;
+            currWeatherInfoSignal.value = { placeName: "" };
         }
     });
 
     const submitHandler = $(() => {
+        isWrongPlace.value = false;
         if (placeNameSignal.value.trim().length > 0) {
             showPlaceWarningSignal.value = false;
             isPlaceEntered.value = placeNameSignal.value.trim();
         } else {
             showPlaceWarningSignal.value = true;
+            currWeatherInfoSignal.value = { placeName: "" };
         }
     });
 
@@ -111,12 +115,12 @@ export default component$(() => {
                 </p>
             )}
 
-            {currWeatherInfoSignal.value.placeName &&
-                (showWeather.value ? (
-                    <WeatherInfo data={currWeatherInfoSignal.value} />
-                ) : (
-                    <p>Sorry, something went wrong. Please enter other place</p>
-                ))}
+            {currWeatherInfoSignal.value.placeName && showWeather.value && (
+                <WeatherInfo data={currWeatherInfoSignal.value} />
+            )}
+            {isWrongPlace.value && (
+                <p>Sorry, something went wrong. Please enter other place</p>
+            )}
         </div>
     );
 });

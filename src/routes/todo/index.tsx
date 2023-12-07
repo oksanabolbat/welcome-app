@@ -5,6 +5,7 @@ import { inputStyle } from "~/recipes/input";
 import { TodoList } from "./todo-list";
 import { todoCtxId } from "../todo-context";
 import { AddItem } from "./add-item";
+import { TodoSummary } from "~/components/todo-summary/todo-summary";
 
 export interface ItemProps {
     id: number;
@@ -46,6 +47,7 @@ export default component$(() => {
             </form>
             <AddItem />
             <TodoList />
+            <TodoSummary />
         </>
     );
 });
