@@ -1,7 +1,11 @@
-import { $, component$, useContext, useSignal } from "@builder.io/qwik";
-import { Button } from "~/recipes/button";
+import {
+    $,
+    component$,
+    useContext,
+    useSignal,
+    useTask$,
+} from "@builder.io/qwik";
 
-import { inputStyle } from "~/recipes/input";
 import { TodoList } from "./todo-list";
 import { todoCtxId } from "../todo-context";
 import { AddItem } from "./add-item";
@@ -15,6 +19,7 @@ export interface ItemProps {
 
 export default component$(() => {
     const textSignal = useSignal("");
+    const submittedSignal = useSignal(false);
 
     const todoItems: ItemProps[] = useContext(todoCtxId);
 
@@ -33,19 +38,19 @@ export default component$(() => {
         textSignal.value = "";
     });
 
+    useTask$(({ track }) => {
+        track(() => {
+            submittedSignal.value;
+        });
+        if (submittedSignal.value) {
+            addItemHandler();
+            submittedSignal.value = false;
+        }
+    });
+
     return (
         <>
-            <form preventdefault:submit onSubmit$={addItemHandler}>
-                <input
-                    class={inputStyle()}
-                    type="text"
-                    bind:value={textSignal}
-                />
-                <Button type="submit" size="sm">
-                    add
-                </Button>
-            </form>
-            <AddItem />
+            <AddItem submitted={submittedSignal} inputValue={textSignal} />
             <TodoList />
             <TodoSummary />
         </>
