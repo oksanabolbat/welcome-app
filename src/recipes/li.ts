@@ -1,5 +1,5 @@
 import { cva } from "~/styled-system/css";
-import { RecipeVariantProps } from "~/styled-system/css";
+import { type RecipeVariantProps } from "~/styled-system/css";
 
 export const liStyle = cva({
     base: {

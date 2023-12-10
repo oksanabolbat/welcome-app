@@ -5,6 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapPin } from "@fortawesome/free-solid-svg-icons";
 
 import { getCityNameByCoords } from "../helpers/api_helpers";
+import { css } from "~/styled-system/css";
+import { buttonStyle } from "~/recipes/button";
+import { flex } from "~/styled-system/patterns";
 
 interface Props {
     currentCity?: string;
@@ -39,31 +42,53 @@ const SearchForm: React.FC<Props> = (props) => {
         }
     };
     return (
-        <form className="row justify-content-around" onSubmit={submitHandler}>
-            <div className="col-9">
+        <form
+            className={flex({
+                justifyContent: "space-around",
+                columnGap: "10px",
+            })}
+            onSubmit={submitHandler}
+        >
+            <div className={css({ width: "75%" })}>
                 <input
                     type="text"
-                    className="form-control col-1"
+                    className={css({
+                        border: "1px solid #ced4da",
+                        borderRadius: "0.375rem",
+                        color: "#212529",
+                        display: "block",
+                        fontSize: "1rem",
+                        fontWeight: "400",
+                        lineHeight: "1.5",
+                        p: "0.375rem 0.75rem",
+                        w: "75%",
+                        mb: "0.5rem",
+                        width: "85%",
+                    })}
                     placeholder="Enter a city name ..."
                     value={currenrCity}
                     onChange={(e) => setCurrentCity(e.target.value)}
                     id="city"
                 />
             </div>
+
             <button
                 type="submit"
                 title="Search"
-                className=" btn btn-primary col-1 px-1 mx-1"
+                className={buttonStyle({ color: "blue" })}
             >
                 OK
             </button>
             <button
                 title="Your current location"
-                className="btn btn-primary col-1 px-1 mx-1"
+                className={buttonStyle({ color: "blue" })}
                 onClick={currentPositionHandler}
             >
-                {/* <FontAwesomeIcon icon={faMapPin} /> */} current position
-                <FontAwesomeIcon icon={faMapPin} />
+                {/* <FontAwesomeIcon icon={faMapPin} /> */}
+                <FontAwesomeIcon
+                    icon={faMapPin}
+                    className={css({ width: "13px" })}
+                />
             </button>
         </form>
     );

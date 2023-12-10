@@ -20,6 +20,9 @@ export const Header = component$(() => {
                     <li>
                         <Link href="/react-weather">weather (react)</Link>
                     </li>
+                    <li>
+                        <Link href="/chart-react">chart example</Link>
+                    </li>
                 </ul>
             </nav>
         </header>

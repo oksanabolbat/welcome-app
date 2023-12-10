@@ -1,10 +1,12 @@
 /** @jsxImportSource react */
+import { flex } from "~/styled-system/patterns";
 import {
     type TodayWeatherProps,
     icons,
     type UnitsProps,
 } from "../helpers/helpers";
 import DateTime from "./DateTime";
+import { css } from "~/styled-system/css";
 
 interface Props {
     data: TodayWeatherProps;
@@ -16,10 +18,21 @@ const unitsClasses =
     "btn btn-link px-0 pt-2 text-black text-decoration-none fs-5";
 const WeatherToday: React.FC<Props> = (props) => {
     return (
-        <div className="row mt-3">
-            <div className="col-7">
-                <div className="row">
-                    <div className="col-3">
+        <div
+            className={flex({
+                wrap: "wrap",
+                justifyContent: "space-between",
+                my: "2rem",
+            })}
+        >
+            <div className={css({ flex: "0 0 auto", maxW: "100%" })}>
+                <div
+                    className={css({
+                        display: "flex",
+                        justifyContent: "space-between",
+                    })}
+                >
+                    <div className={css({ width: "25%" })}>
                         {props.data.icon && (
                             <img
                                 alt={props.data.description}
@@ -31,8 +44,15 @@ const WeatherToday: React.FC<Props> = (props) => {
                             />
                         )}
                     </div>
-                    <div className="col-2 text-end">
-                        <span className="display-2">{props.data.temp}</span>
+                    <div className={css({ textAlign: "right" })}>
+                        <span
+                            className={css({
+                                lineHeight: "1.2",
+                                fontSize: "50px",
+                            })}
+                        >
+                            {props.data.temp}
+                        </span>
                     </div>
                     <div className="col-2 ">
                         <span
@@ -62,8 +82,14 @@ const WeatherToday: React.FC<Props> = (props) => {
                         </span>
                     </div>
 
-                    <div className="col-5">
-                        <ul className="mt-3 list-unstyled opacity-50 small">
+                    <div className={css({ width: "40%" })}>
+                        <ul
+                            className={css({
+                                opacity: "50%",
+                                mt: "1rem",
+                                fontSize: "0.8em",
+                            })}
+                        >
                             <li className={""}>
                                 <span>{props.data.description}</span>
                             </li>
@@ -79,8 +105,21 @@ const WeatherToday: React.FC<Props> = (props) => {
                 </div>
             </div>
             <div className="col-5 text-end">
-                <h1 className="display-4">{props.data.city}</h1>
-                <ul className="small list-unstyled opacity-75">
+                <h1
+                    className={css({
+                        lineHeight: "1.2",
+                        fontSize: "50px",
+                    })}
+                >
+                    {props.data.city}
+                </h1>
+                <ul
+                    className={css({
+                        fontSize: "0.8",
+                        textAlign: "right",
+                        opacity: "0.8",
+                    })}
+                >
                     <li>Last updated:</li>
                     <li>
                         <DateTime

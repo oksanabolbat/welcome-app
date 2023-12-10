@@ -1,6 +1,7 @@
 /** @jsxImportSource react */
 import DateTime from "./DateTime";
 import { type UnitsProps, type DayForecastProps } from "../helpers/helpers";
+import { css } from "~/styled-system/css";
 
 interface Props {
     day: DayForecastProps;
@@ -10,17 +11,16 @@ interface Props {
 const OneDay: React.FC<Props> = (props) => {
     const day = props.day;
     return (
-        <div className={`col text-center`}>
+        <div className={css({ textAlign: "center" })}>
             <div className="fs-6">
                 <DateTime date={{ date: day.day, format: "short" }} />
             </div>
             <div className="forecast-icon">
                 <img
-                    className=" img-fluid"
                     src={day.url}
                     alt={day.condition}
-                    width={"100px"}
-                    height={"100px"}
+                    width={"80px"}
+                    height={"80px"}
                 />
             </div>
             <div className="forecast-temp">

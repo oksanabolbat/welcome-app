@@ -13,6 +13,7 @@ import {
 } from "../helpers/helpers";
 import DailyForecast from "./DailyForecast";
 import { qwikify$ } from "@builder.io/qwik-react";
+import { css } from "~/styled-system/css";
 //import { qwikify$ } from "@builder.io/qwik-react";
 //import { Grid } from "react-loader-spinner";
 
@@ -95,7 +96,25 @@ const MainView = () => {
     );
 
     return (
-        <div>
+        <div
+            className={css({
+                maxW: "800px",
+                p: "3rem 1rem 0.5rem",
+                m: "0 auto",
+                backgroundColor: "rgba(241,246,249,0.5)",
+                borderRadius: "0.375rem",
+            })}
+        >
+            <h2
+                className={css({
+                    mb: "3rem",
+                    fontSize: "calc(1.375rem + 1.5vw)",
+                    fontWeight: "500",
+                    lineHeight: "1.2",
+                })}
+            >
+                Weather Forecast
+            </h2>
             <SearchForm
                 currentCity={city}
                 updateWeather={updateWeather}

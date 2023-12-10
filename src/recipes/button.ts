@@ -3,7 +3,6 @@ import { cva, type RecipeVariantProps } from "../styled-system/css";
 
 export const buttonStyle = cva({
     base: {
-        background: "green.500",
         textAlign: "center",
         minWidth: "200px",
         fontFamily: "monospace",
@@ -24,9 +23,18 @@ export const buttonStyle = cva({
                 fontSize: "18px",
             },
         },
+        color: {
+            green: {
+                background: "green.500",
+            },
+            blue: {
+                background: "blue.500",
+            },
+        },
     },
     defaultVariants: {
         size: "sm",
+        color: "green",
     },
 });
 
