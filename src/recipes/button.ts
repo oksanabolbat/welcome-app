@@ -38,6 +38,17 @@ export const buttonStyle = cva({
     },
 });
 
+export const footerBtnStyle = cva({
+    base: {
+        cursor: "pointer",
+        minW: "50px",
+        maxW: "100px",
+        _hover: {
+            opacity: "0.5",
+        },
+    },
+});
+
 export type ButtonVariants = RecipeVariantProps<typeof buttonStyle>; // { size?: 'small' | 'large' }
 
 export const Button = styled("button", buttonStyle);

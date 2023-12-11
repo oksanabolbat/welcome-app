@@ -16,7 +16,7 @@ export default component$(() => {
             <div
                 class={css({
                     width: "100%",
-                    p: "20px 10px",
+                    p: "2rem 1rem 4rem ",
                     overflow: "hidden",
                     flexGrow: 1,
                 })}
