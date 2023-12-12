@@ -20,15 +20,16 @@ export default component$(() => {
     return (
         <div
             class={css({
-                height: "100vh",
-                display: "flex",
-                flexDirection: "column",
+                //height: "100vh",
                 position: "relative",
             })}
         >
             <div
                 class={css({
+                    display: "flex",
+                    flexDirection: "column",
                     pb: "4rem",
+                    height: "100vh",
                 })}
             >
                 <Header />
