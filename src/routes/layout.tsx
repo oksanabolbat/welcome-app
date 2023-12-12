@@ -23,12 +23,19 @@ export default component$(() => {
                 height: "100vh",
                 display: "flex",
                 flexDirection: "column",
+                position: "relative",
             })}
         >
-            <Header />
-            <Slot />
-            <p>footer</p>
-            <Footer />
+            <div
+                class={css({
+                    pb: "4rem",
+                })}
+            >
+                <Header />
+                <Slot />
+                <p>footer</p>
+                <Footer />
+            </div>
         </div>
     );
 });
