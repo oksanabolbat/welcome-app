@@ -25,7 +25,7 @@ export default component$(() => {
                 type="text/javascript"
                 src="add_to_homescreen/src/addtohomescreen.js"
             ></script>
-            <script dangerouslySetInnerHTML={"() => addToHomescreen()"} />
+            <script>addToHomescreen()</script>
         </>
     );
 });
