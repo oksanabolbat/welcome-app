@@ -41,8 +41,10 @@ export const buttonStyle = cva({
 export const footerBtnStyle = cva({
     base: {
         cursor: "pointer",
-        minW: "50px",
-        maxW: "100px",
+        minW: "100px",
+        maxW: "180px",
+        textAlign: "center",
+        color: "#fff",
         _hover: {
             opacity: "0.5",
         },

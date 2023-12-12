@@ -10,6 +10,7 @@ export default component$(() => {
                 flexDirection: "column",
                 overflow: "auto",
                 flexGrow: 1,
+                px: "1rem",
             })}
         >
             <h3>Chart example</h3>

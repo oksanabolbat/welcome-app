@@ -1,7 +1,6 @@
 import { component$, Slot } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
-import { Header } from "../components/header/header";
 import { Footer } from "../components/footer/footer";
 import { css } from "~/styled-system/css";
 
@@ -29,12 +28,11 @@ export default component$(() => {
                     display: "flex",
                     flexDirection: "column",
                     pb: "4rem",
+                    pt: "1rem",
                     height: "100vh",
                 })}
             >
-                <Header />
                 <Slot />
-                <p>footer</p>
                 <Footer />
             </div>
         </div>
