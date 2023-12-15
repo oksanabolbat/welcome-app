@@ -19,7 +19,13 @@ export default defineConfig({
             tokens: {
                 colors: {
                     brand: { value: "#31A062" },
-                    login: { value: "#DA6682" },
+                    brandPrimary: { value: "#5DB075" },
+                    brandSecondary: { value: "#4B9460" },
+                    logout: { value: "#DA6682" },
+                    main: { value: "#fff" },
+                    mainText: { value: "#000" },
+                    contentText: { value: "#4F4F4F" },
+                    headingText: { value: "#1A1A1A" },
                 },
             },
         },

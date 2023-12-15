@@ -3,6 +3,7 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { useNavigate } from "@builder.io/qwik-city";
 
 import { css } from "~/styled-system/css";
+import { containerStyle } from "~/styles/recipes/container";
 
 export default component$(() => {
     const nav = useNavigate();
@@ -12,21 +13,7 @@ export default component$(() => {
         }, 2000);
     });
     return (
-        <div
-            class={[
-                css({
-                    display: "flex",
-                    alignItems: "center",
-                    w: "100%",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                    gap: "4.25rem",
-                    textStyle: "textStyles.headings",
-                    color: "#fff",
-                    pb: "10.5rem",
-                }),
-            ]}
-        >
+        <div class={containerStyle()}>
             <div class={css({ fontSize: "2rem", textAlign: "center" })}>
                 [Fictive company logo]
             </div>

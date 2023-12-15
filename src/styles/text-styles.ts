@@ -13,12 +13,29 @@ export const textStyles = defineTextStyles({
             textTransform: "None",
         },
     },
-    headings: {
-        description: "Text styles for headings",
+    headingMain: {
+        description: "Text styles for main headings",
         value: {
             fontWeight: "900",
             fontFamily: "Inter",
+            fontSize: "2rem",
+        },
+    },
+    headingSecondary: {
+        value: {
+            fontWeight: "700",
+            fontSize: "1.5rem",
+            //fontFamily: "Titillium Web",
+            fontFamily: "Inter",
+        },
+    },
+    paragraph: {
+        value: {
             fontSize: "1rem",
+            lineHeight: "1.3rem",
+            fontWeight: "400",
+            //fontFamily: "Titillium Web",
+            fontFamily: "Inter",
         },
     },
 });

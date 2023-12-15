@@ -4,10 +4,10 @@ import { cva, type RecipeVariantProps } from "../../styled-system/css";
 export const buttonStyle = cva({
     base: {
         textAlign: "center",
-        minWidth: "200px",
+        w: "21rem",
         fontFamily: "monospace",
-        padding: "10px",
-        borderRadius: "15px",
+        padding: "1rem",
+        borderRadius: "1.25rem",
         cursor: "pointer",
         _hover: {
             opacity: "0.5",
@@ -16,25 +16,24 @@ export const buttonStyle = cva({
     variants: {
         size: {
             sm: {
-                fontSize: "13px",
-                minWidth: "100px",
+                fontSize: "1rem",
             },
             lg: {
-                fontSize: "18px",
+                fontSize: "1.5rem",
             },
         },
         color: {
-            green: {
+            main: {
                 background: "brand",
             },
-            blue: {
-                background: "blue.500",
+            logout: {
+                background: "logout",
             },
         },
     },
     defaultVariants: {
         size: "sm",
-        color: "green",
+        color: "main",
     },
 });
 
@@ -44,7 +43,7 @@ export const footerBtnStyle = cva({
         minW: "100px",
         maxW: "180px",
         textAlign: "center",
-        color: "#fff",
+        color: "main",
         _hover: {
             opacity: "0.5",
         },
