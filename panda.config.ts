@@ -26,6 +26,8 @@ export default defineConfig({
                     mainText: { value: "#000" },
                     contentText: { value: "#4F4F4F" },
                     headingText: { value: "#1A1A1A" },
+                    bgLogin: { value: "#fafafa" },
+                    bgCommon: { value: "#F6F6F9" },
                 },
             },
         },

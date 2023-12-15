@@ -22,6 +22,7 @@ export default component$(() => {
                 display: "flex",
                 pr: "1.25rem",
                 pl: "2.13rem",
+                bgColor: "bgLogin",
             })}
         >
             <Slot />
