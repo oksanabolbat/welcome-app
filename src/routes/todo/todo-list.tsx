@@ -1,7 +1,7 @@
 import { component$, useContext } from "@builder.io/qwik";
 
 import { todoCtxId } from "../todo-context";
-import { liStyle } from "~/recipes/li";
+import { liStyle } from "~/styles/recipes/li";
 
 export const TodoList = component$(() => {
     const todoItems = useContext(todoCtxId);

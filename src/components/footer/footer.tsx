@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
-import { footerBtnStyle } from "~/recipes/button";
+import { footerBtnStyle } from "~/styles/recipes/button";
 import { css } from "~/styled-system/css";
 
 export const Footer = component$(() => {

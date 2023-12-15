@@ -2,8 +2,8 @@ import { component$, useSignal, $, useTask$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 
 import { container } from "~/styled-system/patterns";
-import { Button } from "~/recipes/button";
-import { Input } from "~/recipes/input";
+import { Button } from "~/styles/recipes/button";
+import { Input } from "~/styles/recipes/input";
 
 import WeatherInfo, {
     type WeatherInfoProps,

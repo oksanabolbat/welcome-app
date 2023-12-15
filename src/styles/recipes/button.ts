@@ -1,5 +1,5 @@
-import { styled } from "../styled-system/jsx";
-import { cva, type RecipeVariantProps } from "../styled-system/css";
+import { styled } from "../../styled-system/jsx";
+import { cva, type RecipeVariantProps } from "../../styled-system/css";
 
 export const buttonStyle = cva({
     base: {
@@ -25,7 +25,7 @@ export const buttonStyle = cva({
         },
         color: {
             green: {
-                background: "green.500",
+                background: "brand",
             },
             blue: {
                 background: "blue.500",

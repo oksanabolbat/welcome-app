@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 
-import { Button } from "~/recipes/button";
-import { inputStyle } from "~/recipes/input";
+import { Button } from "~/styles/recipes/button";
+import { inputStyle } from "~/styles/recipes/input";
 
 interface AddItemProps {
     inputValue: { value: string };
