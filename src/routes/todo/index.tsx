@@ -10,6 +10,7 @@ import { TodoList } from "./todo-list";
 import { todoCtxId } from "../todo-context";
 import { AddItem } from "./add-item";
 import { TodoSummary } from "~/components/todo-summary/todo-summary";
+import { Footer } from "~/components/footer/footer";
 
 export interface ItemProps {
     id: number;
@@ -53,6 +54,7 @@ export default component$(() => {
             <AddItem submitted={submittedSignal} inputValue={textSignal} />
             <TodoList />
             <TodoSummary />
+            <Footer />
         </>
     );
 });

@@ -27,7 +27,7 @@ export default component$(() => {
                 class={css({
                     display: "flex",
                     flexDirection: "column",
-                    pb: "4rem",
+                    pb: "4.68rem",
                     pt: "1rem",
                     height: "100vh",
                 })}

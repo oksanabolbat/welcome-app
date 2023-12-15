@@ -75,13 +75,13 @@ const SearchForm: React.FC<Props> = (props) => {
             <button
                 type="submit"
                 title="Search"
-                className={buttonStyle({ color: "blue" })}
+                className={buttonStyle({ color: "main" })}
             >
                 OK
             </button>
             <button
                 title="Your current location"
-                className={buttonStyle({ color: "blue" })}
+                className={buttonStyle({ color: "main" })}
                 onClick={currentPositionHandler}
             >
                 {/* <FontAwesomeIcon icon={faMapPin} /> */}

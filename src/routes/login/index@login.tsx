@@ -11,7 +11,7 @@ export default component$(() => {
         <div class={containerStyle()}>
             <h1
                 class={css({
-                    textStyle: "textStyles.headingMain",
+                    textStyle: "textStyles.headingPrimary",
                     color: "headingText",
                     mb: "2.5rem",
                 })}
@@ -28,7 +28,7 @@ export default component$(() => {
             </h2>
             <p
                 class={css({
-                    textStyle: "textStyles.paragraph",
+                    textStyle: "textStyles.body",
                     color: "contentText",
                 })}
             >
@@ -37,7 +37,7 @@ export default component$(() => {
             </p>
             <Button
                 class={css({ color: "main" })}
-                onClick$={() => nav("/todo")}
+                onClick$={() => nav("/overview")}
             >
                 Login
             </Button>
