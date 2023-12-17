@@ -11,4 +11,27 @@ export const footerStyle = cva({
     },
 });
 
+export const footerIconStyle = cva({
+    base: {
+        color: "inherit",
+        w: "100%",
+        h: "100%",
+        textAlign: "center",
+        fontSize: "0.75rem",
+        transition: "all 0.3s ease-in-out",
+        _hover: {
+            opacity: "0.5",
+        },
+    },
+    variants: {
+        type: {
+            active: {
+                color: "brand",
+                opacity: "1",
+            },
+            notActive: {},
+        },
+    },
+});
+
 export const Footer = styled("footer", footerStyle);

@@ -1,8 +1,9 @@
 import { component$, Slot } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
-import { Footer } from "../components/footer/footer";
+import { Footer } from "~/components/footer/footer";
 import { css } from "~/styled-system/css";
+import { Header } from "~/components/header/header";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
     // Control caching for this request for best performance and to reduce hosting costs:
@@ -21,20 +22,21 @@ export default component$(() => {
             class={css({
                 //height: "100vh",
                 position: "relative",
+                backgroundColor: "bgCommon",
             })}
         >
             <div
                 class={css({
                     display: "flex",
                     flexDirection: "column",
-                    pb: "4.68rem",
-                    pt: "1rem",
+                    p: "1.25rem 1.88rem 4.68rem",
                     height: "100vh",
                 })}
             >
+                <Header />
                 <Slot />
-                <Footer />
             </div>
+            <Footer />
         </div>
     );
 });

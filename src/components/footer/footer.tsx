@@ -1,33 +1,47 @@
 import { component$ } from "@builder.io/qwik";
-//import { Link, useLocation } from "@builder.io/qwik-city";
-import { Link } from "@builder.io/qwik-city";
-//import { footerBtnStyle } from "~/styles/recipes/button";
+import { FooterLink } from "~/integrations/react/UI/FooterLink";
+import {
+    MuiIconCollection,
+    MuiIconHome,
+    MuiIconMail,
+    MuiIconPerson,
+    MuiIconSearch,
+} from "~/integrations/react/UI/icons/icons";
 import { css } from "~/styled-system/css";
 
 export const Footer = component$(() => {
     //  const location = useLocation();
 
     return (
-        <>
-            <footer
-                class={css({
-                    position: "absolute",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-evenly",
-                    bottom: "0",
-                    width: "100%",
-                    height: "4.68rem",
-                    color: "mainText",
-                    bgColor: "main",
-                })}
-            >
-                <Link href="/overview">Overview</Link>
-                <Link href="/documents">Documents</Link>
-                <Link href="/portfolio">Portfolio</Link>
-                <Link href="/messages">Messages</Link>
-                <Link href="/account">Account</Link>
-            </footer>
-        </>
+        <footer
+            class={css({
+                position: "absolute",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-evenly",
+                bottom: "0",
+                width: "100%",
+                height: "4.68rem",
+                color: "mainText",
+                bgColor: "main",
+                opacity: "0.8",
+            })}
+        >
+            <FooterLink ref="/overview" text="Overview" isActive={true}>
+                <MuiIconHome />
+            </FooterLink>
+            <FooterLink ref="/documents" text="Documents">
+                <MuiIconSearch />
+            </FooterLink>
+            <FooterLink ref="/portfolio" text="Portfolio">
+                <MuiIconCollection />
+            </FooterLink>
+            <FooterLink ref="/messages" text="Messages">
+                <MuiIconMail />
+            </FooterLink>
+            <FooterLink ref="/account" text="Account">
+                <MuiIconPerson />
+            </FooterLink>
+        </footer>
     );
 });
