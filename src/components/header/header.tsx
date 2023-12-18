@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import { flex } from "~/styled-system/patterns";
+import { Notification } from "./Notification";
 
 export const Header = component$(() => {
     return (
@@ -14,7 +15,7 @@ export const Header = component$(() => {
             >
                 Fictive company A/S
             </h4>
-            <div>icon</div>
+            <Notification unread={2} />
         </header>
     );
 });
