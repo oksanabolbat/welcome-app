@@ -10,8 +10,6 @@ import {
 import { css } from "~/styled-system/css";
 
 export const Footer = component$(() => {
-    //  const location = useLocation();
-
     return (
         <footer
             class={css({
@@ -27,7 +25,7 @@ export const Footer = component$(() => {
                 opacity: "0.8",
             })}
         >
-            <FooterLink ref="/overview" text="Overview" isActive={true}>
+            <FooterLink ref="/overview" text="Overview">
                 <MuiIconHome />
             </FooterLink>
             <FooterLink ref="/documents" text="Documents">

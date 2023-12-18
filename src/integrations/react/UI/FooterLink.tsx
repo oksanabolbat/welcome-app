@@ -1,20 +1,21 @@
 import { Slot, component$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import { footerIconStyle } from "~/styles/recipes/footer";
-import { Link } from "@builder.io/qwik-city";
+import { Link, useLocation } from "@builder.io/qwik-city";
 
 interface Props {
     ref: string;
     text: string;
-    isActive?: boolean;
 }
 
 export const FooterLink = component$((props: Props) => {
+    const location = useLocation();
+
     return (
-        <Link href={props.ref} class={css({ w: "3.125rem" })}>
+        <Link href={props.ref} class={css({ w: "3.125rem", flexGrow: "1" })}>
             <div
                 class={
-                    props.isActive
+                    location.url.pathname === props.ref + "/"
                         ? footerIconStyle({ type: "active" })
                         : footerIconStyle()
                 }
