@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import { TotalValueHeading } from "./TotalValueHeading";
-import { QChart } from "~/integrations/react/chart/Chart";
+// import { QChart } from "~/integrations/react/chart/Chart";
 
 export const TotalValue = component$(() => {
     return (
@@ -13,7 +13,7 @@ export const TotalValue = component$(() => {
                     overflow: "hidden",
                 })}
             >
-                <QChart />
+                {/* <QChart /> */}
             </div>
         </>
     );
