@@ -1,3 +1,4 @@
+"use client";
 import { component$, type QRL } from "@builder.io/qwik";
 import { tabBtnStyle } from "~/styles/recipes/buttons";
 

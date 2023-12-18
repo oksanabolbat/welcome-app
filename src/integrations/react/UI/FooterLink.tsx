@@ -1,3 +1,4 @@
+"use client";
 import { Slot, component$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import { footerIconStyle } from "~/styles/recipes/footer";
