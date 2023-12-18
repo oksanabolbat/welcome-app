@@ -2,7 +2,7 @@
 import { component$, Slot } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
-import { Footer } from "~/components/footer/Footer";
+import Footer from "~/components/footer/Footer";
 import { css } from "~/styled-system/css";
 import { Header } from "~/components/header/Header";
 
@@ -21,7 +21,6 @@ export default component$(() => {
     return (
         <div
             class={css({
-                //height: "100vh",
                 position: "relative",
                 backgroundColor: "bgCommon",
             })}
