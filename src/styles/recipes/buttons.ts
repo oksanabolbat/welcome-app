@@ -37,6 +37,32 @@ export const buttonStyle = cva({
     },
 });
 
+export const tabBtnStyle = cva({
+    base: {
+        p: "0.4rem 0.9375rem ",
+        h: "1.41731rem",
+
+        fontSize: "0.4375rem",
+        fontWeight: "600",
+        lineHeight: "0.5rem",
+        textAlign: "center",
+        cursor: "pointer",
+        borderRadius: "0.8125rem",
+    },
+    variants: {
+        type: {
+            tab: {
+                color: "#9291A5",
+                bgColor: "main",
+            },
+            activeTab: {
+                bgColor: "#1E1B39",
+                color: "main",
+            },
+        },
+    },
+});
+
 export const footerBtnStyle = cva({
     base: {
         cursor: "pointer",
@@ -48,6 +74,7 @@ export const footerBtnStyle = cva({
             opacity: "0.5",
         },
     },
+    variants: {},
 });
 
 export type ButtonVariants = RecipeVariantProps<typeof buttonStyle>; // { size?: 'small' | 'large' }

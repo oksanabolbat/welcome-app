@@ -7,7 +7,7 @@ export const TotalValueSummary = component$(() => {
     return (
         <div
             class={css({
-                bg: "linear-gradient(269deg, #31A078 49.47%, #31A05F 95.75%)",
+                bgColor: "brand",
                 backdropFilter: "blur(2px)",
                 borderRadius: "1.25rem",
                 m: "1.19rem 0 2.87rem",
@@ -29,7 +29,6 @@ export const TotalValueSummary = component$(() => {
                     minH: "3.0625rem",
                 })}
             >
-                {" "}
                 {totalValue} {units}
             </p>
         </div>

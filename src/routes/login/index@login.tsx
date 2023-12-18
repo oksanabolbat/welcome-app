@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { useNavigate } from "@builder.io/qwik-city";
 import { css } from "~/styled-system/css";
-import { Button } from "~/styles/recipes/button";
+import { Button } from "~/styles/recipes/buttons";
 
 import { containerStyle } from "~/styles/recipes/container";
 

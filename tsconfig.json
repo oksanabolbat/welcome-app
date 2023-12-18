@@ -27,6 +27,6 @@
         "./*.d.ts",
         "./*.config.ts",
         "src/styles/recipes/input.ts",
-        "src/styles/recipes/button.ts"
+        "src/styles/recipes/buttons.ts"
     ]
 }

@@ -1,12 +1,9 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import { Circle } from "~/styled-system/jsx";
 
-interface Props {
-    unread?: number;
-}
-
-export const Notification = component$((props: Props) => {
+export const Notification = component$(() => {
+    const unread = useSignal(2);
     return (
         <div>
             <svg
@@ -51,7 +48,7 @@ export const Notification = component$((props: Props) => {
                             fontWeight: "600",
                         })}
                     >
-                        {props.unread}
+                        {unread.value}
                     </p>
                 </Circle>
             </svg>

@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { QChart } from "../../integrations/react/chart/chart";
+import { QChart } from "../../integrations/react/chart/chart_out";
 import { css } from "~/styled-system/css";
 
 export default component$(() => {

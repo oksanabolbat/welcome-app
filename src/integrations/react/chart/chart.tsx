@@ -1,6 +1,8 @@
 /** @jsxImportSource react */
 import { qwikify$ } from "@builder.io/qwik-react";
 
+import { colors } from "~/styles/constants";
+
 import {
     LineChart,
     Line,
@@ -14,57 +16,86 @@ import {
 
 const data = [
     {
-        name: "Page A",
-        uv: 4000,
-        pv: 2400,
-        amt: 2400,
+        name: "Jan",
+        uv: 0.5,
+        pv: 0.1,
+        amt: 0.3,
     },
     {
-        name: "Page B",
-        uv: 3000,
-        pv: 1398,
-        amt: 2210,
+        name: "Feb",
+        uv: 0.6,
+        pv: 0.6,
+        amt: 0.6,
     },
     {
-        name: "Page C",
-        uv: 2000,
-        pv: 9800,
-        amt: 2290,
+        name: "Mar",
+        uv: 0.5,
+        pv: 0.7,
+        amt: 0.6,
     },
     {
-        name: "Page D",
-        uv: 2780,
-        pv: 3908,
-        amt: 2000,
+        name: "Apr",
+        uv: 1.5,
+        pv: 0.5,
+        amt: 1,
     },
     {
-        name: "Page E",
-        uv: 1890,
-        pv: 4800,
-        amt: 2181,
+        name: "May",
+        uv: 0.4,
+        pv: 1.2,
+        amt: 0.8,
     },
     {
-        name: "Page F",
-        uv: 2390,
-        pv: 3800,
-        amt: 2500,
+        name: "Jun",
+        uv: 0.1,
+        pv: 1.7,
+        amt: 0.9,
     },
     {
-        name: "Page G",
-        uv: 3490,
-        pv: 4300,
-        amt: 2100,
+        name: "Jul",
+        uv: 0.7,
+        pv: 1.1,
+        amt: 0.9,
+    },
+    {
+        name: "Aug",
+        uv: 1,
+        pv: 1,
+        amt: 1,
+    },
+    {
+        name: "Sep",
+        uv: 0.9,
+        pv: 0.5,
+        amt: 0.7,
+    },
+    {
+        name: "Oct",
+        uv: 1.2,
+        pv: 1.3,
+        amt: 1.25,
+    },
+    {
+        name: "Nov",
+        uv: 0.6,
+        pv: 0.2,
+        amt: 0.4,
+    },
+    {
+        name: "Dec",
+        uv: 0.3,
+        pv: 0.4,
+        amt: 0.35,
     },
 ];
 
 const Chart = () => {
     return (
         <>
-            <p>message text</p>
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                     width={500}
-                    height={300}
+                    height={160}
                     data={data}
                     margin={{
                         top: 5,
@@ -75,16 +106,20 @@ const Chart = () => {
                 >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
-                    <YAxis />
+                    <YAxis orientation="right" />
                     <Tooltip />
                     <Legend />
                     <Line
                         type="monotone"
                         dataKey="pv"
-                        stroke="#8884d8"
+                        stroke={colors.primary}
                         activeDot={{ r: 8 }}
                     />
-                    <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                    <Line
+                        type="monotone"
+                        dataKey="uv"
+                        stroke={colors.secondary}
+                    />
                 </LineChart>
             </ResponsiveContainer>
         </>

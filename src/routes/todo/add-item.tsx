@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 
-import { Button } from "~/styles/recipes/button";
+import { Button } from "~/styles/recipes/buttons";
 import { inputStyle } from "~/styles/recipes/input";
 
 interface AddItemProps {

@@ -15,7 +15,7 @@ export const Header = component$(() => {
             >
                 Fictive company A/S
             </h4>
-            <Notification unread={2} />
+            <Notification />
         </header>
     );
 });

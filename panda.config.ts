@@ -1,6 +1,8 @@
 import { defineConfig } from "@pandacss/dev";
 import { textStyles } from "~/styles/text-styles";
 
+import { colors } from "~/styles/constants";
+
 export default defineConfig({
     jsxFramework: "qwik",
 
@@ -18,10 +20,10 @@ export default defineConfig({
         extend: {
             tokens: {
                 colors: {
-                    brand: { value: "#31A062" },
+                    brand: { value: colors.primary },
                     brandPrimary: { value: "#5DB075" },
                     brandSecondary: { value: "#4B9460" },
-                    logout: { value: "#DA6682" },
+                    logout: { value: colors.secondary },
                     main: { value: "#fff" },
                     mainText: { value: "#000" },
                     contentText: { value: "#4F4F4F" },

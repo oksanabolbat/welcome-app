@@ -6,7 +6,7 @@ import { faMapPin } from "@fortawesome/free-solid-svg-icons";
 
 import { getCityNameByCoords } from "../helpers/api_helpers";
 import { css } from "~/styled-system/css";
-import { buttonStyle } from "~/styles/recipes/button";
+import { buttonStyle } from "~/styles/recipes/buttons";
 import { flex } from "~/styled-system/patterns";
 
 interface Props {

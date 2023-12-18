@@ -2,7 +2,7 @@ import { component$, useSignal, $, useTask$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 
 import { container } from "~/styled-system/patterns";
-import { Button } from "~/styles/recipes/button";
+import { Button } from "~/styles/recipes/buttons";
 import { Input } from "~/styles/recipes/input";
 
 import WeatherInfo, {
