@@ -1,4 +1,4 @@
-import { component$, useStore, useContextProvider } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import {
     QwikCityProvider,
     RouterOutlet,
@@ -8,9 +8,6 @@ import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
 
-import { type ItemProps } from "./routes/todo";
-import { todoCtxId } from "./routes/todo-context";
-
 export default component$(() => {
     /**
      * The root of a QwikCity site always start with the <QwikCityProvider> component,
@@ -18,11 +15,7 @@ export default component$(() => {
      *
      * Don't remove the `<head>` and `<body>` elements.
      */
-    const todoItems = useStore<ItemProps[]>([
-        { id: 1, status: "new", text: "test text" },
-    ]);
 
-    useContextProvider(todoCtxId, todoItems); //availiable in this component and it's childs
     return (
         <QwikCityProvider>
             <head>
