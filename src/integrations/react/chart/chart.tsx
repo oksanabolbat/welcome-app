@@ -1,4 +1,5 @@
 /** @jsxImportSource react */
+"use client";
 import { qwikify$ } from "@builder.io/qwik-react";
 
 import { colors } from "~/styles/constants";
