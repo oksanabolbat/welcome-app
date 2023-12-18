@@ -1,8 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import { TotalValueHeading } from "./TotalValueHeading";
 
-import { QChart } from "~/integrations/react/chart/Chart";
 import { css } from "~/styled-system/css";
+import { QChart } from "../../integrations/react/chart/Chart";
 
 export const TotalValue = component$(() => {
     return (
