@@ -2,7 +2,6 @@
 import { component$, Slot } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
-import Footer from "~/components/footer/Footer";
 import { css } from "~/styled-system/css";
 import { Header } from "~/components/header/Header";
 
@@ -36,7 +35,7 @@ export default component$(() => {
                 <Header />
                 <Slot />
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 });
