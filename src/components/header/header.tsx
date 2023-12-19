@@ -3,6 +3,9 @@ import { component$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import { flex } from "~/styled-system/patterns";
 
+import { NotificationIcon } from "./notification-icon";
+
+
 export const Header = component$(() => {
     return (
         <header class={flex({ justifyContent: "space-between" })}>
@@ -15,6 +18,9 @@ export const Header = component$(() => {
             >
                 Fictive company A/S
             </h4>
+
+            <NotificationIcon />
+
         </header>
     );
 });
