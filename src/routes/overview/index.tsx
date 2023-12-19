@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
-import { TotalValue } from "~/components/overview/TotalValue";
-import { TotalValueSummary } from "~/components/overview/TotalValueSummary";
+import { TotalValue } from "~/components/overview/total-value";
+import { TotalValueSummary } from "~/components/overview/total-value-summary";
 import { css } from "~/styled-system/css";
 
 export default component$(() => {

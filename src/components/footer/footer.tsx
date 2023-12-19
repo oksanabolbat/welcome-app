@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { FooterLink } from "~/integrations/react/UI/FooterLink";
+import { FooterLink } from "~/integrations/react/UI/footer-link";
 import {
     MuiIconCollection,
     MuiIconHome,

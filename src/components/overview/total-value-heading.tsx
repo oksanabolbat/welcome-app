@@ -1,5 +1,5 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
-import { TabButton } from "~/integrations/react/UI/TabButton";
+import { TabButton } from "~/integrations/react/UI/tab-button";
 import { css } from "~/styled-system/css";
 import { flex } from "~/styled-system/patterns";
 
