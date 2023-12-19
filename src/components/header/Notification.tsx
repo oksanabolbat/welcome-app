@@ -2,7 +2,7 @@ import { component$, useSignal } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import { Circle } from "~/styled-system/jsx";
 
-export const NotificationNew = component$(() => {
+export const NotificationIcon = component$(() => {
     const unread = useSignal(3);
     return (
         <div>
