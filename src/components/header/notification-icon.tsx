@@ -1,11 +1,12 @@
 import { component$, useSignal } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 import { css } from "~/styled-system/css";
 import { Circle } from "~/styled-system/jsx";
 
 export const NotificationIcon = component$(() => {
     const unread = useSignal(3);
     return (
-        <div>
+        <Link href="/messages">
             <svg
                 width="24"
                 height="24"
@@ -29,7 +30,7 @@ export const NotificationIcon = component$(() => {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                 />
-                left: "4px",
+
                 <Circle
                     class={css({
                         w: "12px",
@@ -52,6 +53,6 @@ export const NotificationIcon = component$(() => {
                     </p>
                 </Circle>
             </svg>
-        </div>
+        </Link>
     );
 });
