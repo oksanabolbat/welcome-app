@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 import { css } from "~/styled-system/css";
 import { flex } from "~/styled-system/patterns";
-import { Notification } from "./notification";
+import { Notification } from "./Notification";
 
 export const Header = component$(() => {
     return (
