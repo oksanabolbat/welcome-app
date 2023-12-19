@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { TotalValueHeading } from "./total-value-heading";
 
 import { css } from "~/styled-system/css";
-import { QChart } from "~/integrations/react/chart/Chart";
+import { QChart } from "~/integrations/react/chart/chart";
 
 export const TotalValue = component$(() => {
     return (
