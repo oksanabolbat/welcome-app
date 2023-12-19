@@ -15,77 +15,78 @@ import {
     ResponsiveContainer,
 } from "recharts";
 
+const DATA_VALUES = ["Value", "Benchmark"];
 const data = [
     {
         name: "Jan",
-        uv: 0.5,
-        pv: 0.1,
+        [DATA_VALUES[0]]: 0.5,
+        [DATA_VALUES[1]]: 0.1,
         amt: 0.3,
     },
     {
         name: "Feb",
-        uv: 0.6,
-        pv: 0.6,
+        [DATA_VALUES[0]]: 0.6,
+        [DATA_VALUES[1]]: 0.6,
         amt: 0.6,
     },
     {
         name: "Mar",
-        uv: 0.5,
-        pv: 0.7,
+        [DATA_VALUES[0]]: 0.5,
+        [DATA_VALUES[1]]: 0.7,
         amt: 0.6,
     },
     {
         name: "Apr",
-        uv: 1.5,
-        pv: 0.5,
+        [DATA_VALUES[0]]: 1.5,
+        [DATA_VALUES[1]]: 0.5,
         amt: 1,
     },
     {
         name: "May",
-        uv: 0.4,
-        pv: 1.2,
+        [DATA_VALUES[0]]: 0.4,
+        [DATA_VALUES[1]]: 1.2,
         amt: 0.8,
     },
     {
         name: "Jun",
-        uv: 0.1,
-        pv: 1.7,
+        [DATA_VALUES[0]]: 0.1,
+        [DATA_VALUES[1]]: 1.7,
         amt: 0.9,
     },
     {
         name: "Jul",
-        uv: 0.7,
-        pv: 1.1,
+        [DATA_VALUES[0]]: 0.7,
+        [DATA_VALUES[1]]: 1.1,
         amt: 0.9,
     },
     {
         name: "Aug",
-        uv: 1,
-        pv: 1,
+        [DATA_VALUES[0]]: 1,
+        [DATA_VALUES[1]]: 1,
         amt: 1,
     },
     {
         name: "Sep",
-        uv: 0.9,
-        pv: 0.5,
+        [DATA_VALUES[0]]: 0.9,
+        [DATA_VALUES[1]]: 0.5,
         amt: 0.7,
     },
     {
         name: "Oct",
-        uv: 1.2,
-        pv: 1.3,
+        [DATA_VALUES[0]]: 1.2,
+        [DATA_VALUES[1]]: 1.3,
         amt: 1.25,
     },
     {
         name: "Nov",
-        uv: 0.6,
-        pv: 0.2,
+        [DATA_VALUES[0]]: 0.6,
+        [DATA_VALUES[1]]: 0.2,
         amt: 0.4,
     },
     {
         name: "Dec",
-        uv: 0.3,
-        pv: 0.4,
+        [DATA_VALUES[0]]: 0.3,
+        [DATA_VALUES[1]]: 0.4,
         amt: 0.35,
     },
 ];
@@ -93,9 +94,16 @@ const data = [
 const Chart = () => {
     return (
         <>
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer
+                width={800}
+                style={{
+                    margin: "0 auto",
+                    overflow: "auto",
+                    paddingBottom: "1.5rem",
+                }}
+            >
                 <LineChart
-                    width={500}
+                    width={800}
                     height={160}
                     data={data}
                     margin={{
@@ -105,20 +113,20 @@ const Chart = () => {
                         bottom: 5,
                     }}
                 >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis orientation="right" />
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                    <XAxis dataKey="name" tickLine={false} />
+                    <YAxis orientation="right" tickLine={false} />
                     <Tooltip />
                     <Legend />
                     <Line
                         type="monotone"
-                        dataKey="pv"
+                        dataKey={DATA_VALUES[0]}
                         stroke={colors.primary}
                         activeDot={{ r: 8 }}
                     />
                     <Line
                         type="monotone"
-                        dataKey="uv"
+                        dataKey={DATA_VALUES[1]}
                         stroke={colors.secondary}
                     />
                 </LineChart>
