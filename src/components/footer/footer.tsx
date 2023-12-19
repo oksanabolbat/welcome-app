@@ -9,7 +9,7 @@ import {
 } from "~/integrations/react/UI/icons/icons";
 import { css } from "~/styled-system/css";
 
-export default component$(() => {
+export const Footer = component$(() => {
     return (
         <footer
             class={css({
