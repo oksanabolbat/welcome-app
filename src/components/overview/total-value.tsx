@@ -11,7 +11,8 @@ export const TotalValue = component$(() => {
             <div
                 class={css({
                     h: "20rem",
-                    overflow: "hidden",
+                    overflow: "auto",
+                    flexGrow: "1",
                 })}
             >
                 <QChart />

@@ -5,7 +5,6 @@ import { flex } from "~/styled-system/patterns";
 
 import { NotificationIcon } from "./notification-icon";
 
-
 export const Header = component$(() => {
     return (
         <header class={flex({ justifyContent: "space-between" })}>
@@ -20,7 +19,6 @@ export const Header = component$(() => {
             </h4>
 
             <NotificationIcon />
-
         </header>
     );
 });

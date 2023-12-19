@@ -1,11 +1,11 @@
 {
     "$schema": "https://json.schemastore.org/web-manifest-combined.json",
     "name": "App",
-    "short_name": "Welcome to Qwik",
+    "short_name": "Welcome",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#fff",
-    "description": "A Qwik project app.",
+    "description": "App.",
     "icons": [
         {
             "src": "/icons/android-icon-36x36.png",
