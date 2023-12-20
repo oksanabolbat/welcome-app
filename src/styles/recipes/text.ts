@@ -17,3 +17,11 @@ export const HeadingStyle = cva({
         },
     },
 });
+
+export const DateStringStyle = cva({
+    base: {
+        fontSize: "0.625rem",
+        color: "#86909C",
+        lineHeight: "1.6rem",
+    },
+});
