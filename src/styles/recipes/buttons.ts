@@ -58,8 +58,22 @@ export const tabBtnStyle = cva({
             activeTab: {
                 bgColor: "#1E1B39",
                 color: "main",
+                cursor: "default",
             },
         },
+    },
+});
+
+export const tabsHolder = cva({
+    base: {
+        h: "1.877rem",
+        w: "fit-content",
+        bgColor: "#fff",
+        borderRadius: "1rem",
+        border: "0.23rem solid #fff",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
     },
 });
 
