@@ -9,6 +9,11 @@ export const HeadingStyle = cva({
                 fontWeight: "700",
                 textAlign: "left",
             },
+            section: {
+                fontSize: "1.14513rem",
+                lineHeight: "1.6rem",
+                fontWeight: "700",
+            },
         },
     },
 });

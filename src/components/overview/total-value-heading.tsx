@@ -4,6 +4,7 @@ import { css } from "~/styled-system/css";
 import { flex } from "~/styled-system/patterns";
 
 import { Toggle } from "../UI/toggle";
+import { HeadingStyle } from "~/styles/recipes/text";
 
 export const TotalValueHeading = component$(() => {
     const TAB_BUTTONS = [
@@ -15,15 +16,7 @@ export const TotalValueHeading = component$(() => {
     return (
         <div class={flex({ justifyContent: "space-between" })}>
             <div>
-                <h3
-                    class={css({
-                        fontSize: "1.14513rem",
-                        lineHeight: "1.6rem",
-                        fontWeight: "700",
-                    })}
-                >
-                    Total value
-                </h3>
+                <h3 class={HeadingStyle({ type: "section" })}>Total value</h3>
                 <p
                     class={css({
                         fontSize: "0.625rem",
