@@ -23,7 +23,7 @@ export default defineConfig({
                     brand: { value: colors.primary },
                     brandPrimary: { value: "#5DB075" },
                     brandSecondary: { value: "#4B9460" },
-                    logout: { value: colors.secondary },
+                    account: { value: colors.secondary },
                     main: { value: "#fff" },
                     mainText: { value: "#000" },
                     contentText: { value: "#4F4F4F" },
