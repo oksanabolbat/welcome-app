@@ -27,7 +27,27 @@ export const buttonStyle = cva({
                 background: "brand",
             },
             logout: {
-                background: "logout",
+                background: "account",
+            },
+        },
+
+        //
+        type: {
+            delete: {
+                borderWidth: "2px",
+                bgColor: "#fff",
+                borderColor: "account",
+                color: "account",
+                display: "block",
+                m: "0 auto",
+            },
+            logout: {
+                bgColor: "logout",
+                borderColor: "#fff",
+                borderWidth: "2px",
+                color: "#fff",
+                display: "block",
+                m: "0 auto",
             },
         },
     },
@@ -49,6 +69,7 @@ export const tabBtnStyle = cva({
         cursor: "pointer",
         borderRadius: "0.8125rem",
     },
+
     variants: {
         type: {
             tab: {
