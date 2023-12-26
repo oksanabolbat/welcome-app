@@ -30,7 +30,7 @@ export default component$(() => {
                 class={css({
                     display: "flex",
                     flexDirection: "column",
-                    p: "1.25rem 1.88rem 4.68rem",
+                    p: "1.25rem 0 4.68rem",
                     height: "100vh",
                 })}
             >

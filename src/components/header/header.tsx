@@ -7,7 +7,12 @@ import { NotificationIcon } from "./notification-icon";
 
 export const Header = component$(() => {
     return (
-        <header class={flex({ justifyContent: "space-between" })}>
+        <header
+            class={[
+                flex({ justifyContent: "space-between" }),
+                css({ px: "1.8rem", mb: "1.5rem" }),
+            ]}
+        >
             <div></div>
             <h4
                 class={css({

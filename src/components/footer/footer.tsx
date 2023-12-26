@@ -23,7 +23,6 @@ export const Footer = component$(() => {
                 color: "mainText",
                 bgColor: "main",
                 opacity: "0.8",
-
                 boxShadow: "5px -5px 5px #f9f9f9",
             })}
         >

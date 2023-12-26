@@ -3,6 +3,8 @@ import { component$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import { buttonStyle } from "~/styles/recipes/buttons";
 
+import { Link } from "@builder.io/qwik-city";
+
 export default component$(() => {
     const imgSrc =
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRDJJISsYkVH9k-pSpvpCKlnw973ZAC030HMP0kJz0pePryjrzJwWXlOyuHDfTnA3XzMA&usqp=CAU";
@@ -46,7 +48,8 @@ export default component$(() => {
             >
                 Jane Doe
             </h1>
-            <button
+            <Link
+                href="/login/"
                 class={[
                     buttonStyle({
                         type: "logout",
@@ -56,7 +59,7 @@ export default component$(() => {
                 ]}
             >
                 Log out
-            </button>
+            </Link>
             <button class={buttonStyle({ type: "delete" })}>
                 Delete account
             </button>
