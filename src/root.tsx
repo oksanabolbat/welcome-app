@@ -19,7 +19,7 @@ export default component$(() => {
     useTask$(async () => {
         const resp = await fetch("https://www.colr.org/json/color/random");
         const data = await resp.json();
-        console.log(data.new_color);
+        //console.log(data.new_color);
         brandColor.value = data.new_color ? `#${data.new_color}` : "#31A062";
     });
     return (
