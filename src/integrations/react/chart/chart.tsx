@@ -95,33 +95,29 @@ const Chart = () => {
     return (
         <>
             <ResponsiveContainer
-                width={800}
+                width={"100%"}
                 style={{
                     margin: "0 auto",
-                    overflow: "auto",
+                    overflowY: "auto",
                     paddingBottom: "1.5rem",
                 }}
             >
-                <LineChart
-                    width={800}
-                    height={160}
-                    data={data}
-                    margin={{
-                        top: 5,
-                        right: 30,
-                        left: 20,
-                        bottom: 5,
-                    }}
-                >
+                <LineChart width={100} height={160} data={data}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} />
                     <XAxis dataKey="name" tickLine={false} />
-                    <YAxis orientation="right" tickLine={false} />
+                    <YAxis
+                        orientation="right"
+                        tickLine={false}
+                        axisLine={false}
+                        tickMargin={-40}
+                        width={1}
+                    />
                     <Tooltip />
                     <Legend />
                     <Line
                         type="monotone"
                         dataKey={DATA_VALUES[0]}
-                        stroke={colors.primary}
+                        stroke={"var(--colors-brand)"}
                         activeDot={{ r: 8 }}
                     />
                     <Line

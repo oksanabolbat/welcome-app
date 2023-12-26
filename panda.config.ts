@@ -21,6 +21,7 @@ export default defineConfig({
             tokens: {
                 colors: {
                     brand: { value: colors.primary },
+
                     brandPrimary: { value: "#5DB075" },
                     brandSecondary: { value: "#4B9460" },
                     account: { value: colors.secondary },

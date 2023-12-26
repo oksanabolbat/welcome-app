@@ -5,6 +5,7 @@ import { HeadingStyle } from "~/styles/recipes/text";
 import { flex } from "~/styled-system/patterns";
 import { Toggle } from "~/components/UI/toggle";
 import { DocumentSection } from "~/components/documents/document-section";
+import { css } from "~/styled-system/css";
 
 const TAB_BUTTONS = [
     { id: "reports", label: "Reports" },
@@ -23,7 +24,7 @@ export default component$(() => {
         { key: "3", name: "Lorem ipsum" },
     ];
     return (
-        <div>
+        <div class={css({ mx: "1.8rem" })}>
             <h2 class={HeadingStyle({ type: "secondary" })}>Documents</h2>
             <div class={flex({ justifyContent: "end" })}>
                 <Toggle buttons={TAB_BUTTONS} activeTab="legal" />

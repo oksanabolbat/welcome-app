@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal, useTask$ } from "@builder.io/qwik";
 import {
     QwikCityProvider,
     RouterOutlet,
@@ -15,7 +15,13 @@ export default component$(() => {
      *
      * Don't remove the `<head>` and `<body>` elements.
      */
-
+    const brandColor = useSignal<string>("#31A062");
+    useTask$(async () => {
+        const resp = await fetch("https://www.colr.org/json/color/random");
+        const data = await resp.json();
+        //console.log(data.new_color);
+        brandColor.value = data.new_color ? `#${data.new_color}` : "#31A062";
+    });
     return (
         <QwikCityProvider>
             <head>
@@ -23,8 +29,9 @@ export default component$(() => {
                 <link rel="manifest" href="/manifest.json" />
                 <RouterHead />
             </head>
-            <body lang="en">
+            <body lang="en" style={{ "--colors-brand": brandColor.value }}>
                 <RouterOutlet />
+
                 <ServiceWorkerRegister />
             </body>
         </QwikCityProvider>

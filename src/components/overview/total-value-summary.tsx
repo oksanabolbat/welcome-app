@@ -10,7 +10,7 @@ export const TotalValueSummary = component$(() => {
                 bgColor: "brand",
                 backdropFilter: "blur(2px)",
                 borderRadius: "1.25rem",
-                m: "1.19rem 0 2.87rem",
+                m: "1.19rem 1.8rem 2.87rem",
                 p: "1rem 0.375rem 0.875rem 1.875rem",
                 display: "inline-flex",
                 flexDir: "column",
